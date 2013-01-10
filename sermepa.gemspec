@@ -9,11 +9,11 @@ Gem::Specification.new do |s|
   s.version     = Sermepa::VERSION
   s.authors     = ["Endika Gutiérrez"]
   s.email       = ["me@endika.net"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Sermepa."
-  s.description = "TODO: Description of Sermepa."
+  s.homepage    = "https://github.com/endSly/sermepa-rails"
+  s.summary     = "Sermepa SOAP gateway for rails."
+  s.description = "Sermepa is a spanish payments gateway"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.8"

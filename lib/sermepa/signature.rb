@@ -10,7 +10,7 @@ module Sermepa
     token += values[:DS_MERCHANT_PAN].to_s
     token += values[:DS_MERCHANT_CVV2].to_s
     token += values[:DS_MERCHANT_TRANSACTIONTYPE].to_s
-    #token += values[:DS_MERCHANT_MERCHANTURL].to_s
+    token += values[:DS_MERCHANT_MERCHANTURL].to_s if config.merchant_url
     token += secret || config.secret
 
     Digest::SHA1.hexdigest(token)
