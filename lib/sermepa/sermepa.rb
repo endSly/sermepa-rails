@@ -14,8 +14,7 @@ module Sermepa
       DS_MERCHANT_ORDER:            params[:order].to_s,
       DS_MERCHANT_TRANSACTIONTYPE:  TRANSACTION_TYPES[transaction_type]
     }
-    
-    #values[:DS_MERCHANT_MERCHANTURL] = Sermepa.config.callback_url if Sermepa.config.callback_url
+    values[:DS_MERCHANT_MERCHANTURL] = Sermepa.config.merchant_url if Sermepa.config.merchant_url
     
     values
   end
