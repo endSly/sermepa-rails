@@ -14,5 +14,5 @@ module Sermepa
   def config
     @config ||= Config.default
   end
-  
+
 end
