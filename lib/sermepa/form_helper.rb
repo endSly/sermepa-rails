@@ -1,8 +1,8 @@
 module Sermepa
   module FormHelper
-    def sermepa_payment_form(amount, params = {}, &block)
+    def sermepa_form_fields(amount, params = {})
       values = {
-        DS_MERCHANT_AMOUNT:                 (amount.to_f * 100).to_i,
+        DS_MERCHANT_AMOUNT:                 amount.to_i,
         DS_MERCHANT_CURRENCY:               CURRENCIES[params[:currency]      || Sermepa.config.currency],
         DS_MERCHANT_PRODUCTDESCRIPTION:     params[:description],
         DS_MERCHANT_TITULAR:                params[:titular],
@@ -16,6 +16,11 @@ module Sermepa
         DS_MERCHANT_CONSUMERLANGUAGE:       params[:consumer_language]        || Sermepa.config.consumer_language
       }
       values[:DS_MERCHANT_MERCHANTSIGNATURE] = Sermepa::signature(values)
+      values
+    end
+  
+    def sermepa_payment_form(amount, params = {}, &block)
+      values = sermepa_form_fields(amount, params)
 
       output = ActiveSupport::SafeBuffer.new
       form_tag Sermepa.config.post_url do
@@ -23,13 +28,9 @@ module Sermepa
         values.each_pair do |k,v|
           output << hidden_field_tag(k, v) if v
         end
-        if block_given?
-          output << capture(&block)
-        else
-          output << submit_tag(t 'send')
-        end
+        output << block_given? ? capture(&block) : submit_tag(t 'sermepa.payment_form.send_action')
       end
-
+      output
     end
   end
 end

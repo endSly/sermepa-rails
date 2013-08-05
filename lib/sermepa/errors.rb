@@ -145,5 +145,12 @@ module Sermepa
       "#{ @error_code }: #{ message }"
     end
   end
+  
+  class SermepaInvalidSignature < StandardError
 
+    def message 
+      "Invalid signature. Signature does not match with expected signature"
+    end
+  end
+  
 end

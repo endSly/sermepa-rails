@@ -10,13 +10,13 @@ Gem::Specification.new do |s|
   s.authors     = ["Endika Gutiérrez"]
   s.email       = ["me@endika.net"]
   s.homepage    = "https://github.com/endSly/sermepa-rails"
-  s.summary     = "Sermepa SOAP gateway for rails."
+  s.summary     = "Sermepa gateway for rails."
   s.description = "Sermepa is a spanish payments gateway"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "rails", "~> 3.2.8"
+  s.add_dependency "activesupport", ">= 3.0"
   s.add_dependency "savon", "~> 2.0.2"
 
   s.add_development_dependency "sqlite3"

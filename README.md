@@ -58,6 +58,7 @@ Timeout::timeout(20) {
 
 * Sermepa::SermepaRemoteError
 * Sermepa::SermepaPaymentError
+* Sermepa::SermepaInvalidSignature
 
 How to use (with Form)
 -----------------------------

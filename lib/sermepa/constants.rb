@@ -12,11 +12,12 @@ module Sermepa
     :traditional_payment =>     'A',
     :preauthorization =>        '1',
     :deferred_authorization =>  'O',
-    :authorization =>  '0',
+    :authorization =>           '0',
 
     # Recurrent payments
     :recurrent_transaction =>   '5',
     :deferred_initial_recurrent_authorization => 'R',
+    
     # Confirmation/Refund requests
     :confirmation =>            '2',
     :automatic_refund =>        '3',
