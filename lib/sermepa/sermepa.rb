@@ -44,7 +44,7 @@ module Sermepa
   end
 
   def call(values = {})
-    client = Savon.client(config.service_url)
+    client = ::Savon.client(config.service_url)
 
     response = client.request :trata_peticion do
       soap.body do |xml|
