@@ -2,6 +2,7 @@ require 'active_support/core_ext'
 require 'sermepa/constants'
 require 'sermepa/errors'
 require 'sermepa/signature'
+require 'savon'
 
 module Sermepa
 
