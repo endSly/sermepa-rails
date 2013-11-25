@@ -1,5 +1,6 @@
 .DS_Store
 .bundle
+*.sublime-project
 log/*.log
 pkg
 test/dummy/db/*.sqlite3
