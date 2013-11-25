@@ -21,16 +21,19 @@ module Sermepa
   
     def sermepa_payment_form(amount, params = {}, &block)
       values = sermepa_form_fields(amount, params)
-
       output = ActiveSupport::SafeBuffer.new
-      form_tag Sermepa.config.post_url do
-        output = ActiveSupport::SafeBuffer.new
+
+      output << form_tag(Sermepa.config.post_url) do
+        innerOutput = ActiveSupport::SafeBuffer.new
         values.each_pair do |k,v|
-          output << hidden_field_tag(k, v) if v
+          innerOutput << hidden_field_tag(k, v) if v
         end
-        output << block_given? ? capture(&block) : submit_tag(t 'sermepa.payment_form.send_action')
+        innerOutput << (block_given?? capture(&block) : submit_tag(t 'sermepa.payment_form.send_action'))
       end
+
       output
     end
+
+
   end
 end
