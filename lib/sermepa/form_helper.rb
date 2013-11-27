@@ -9,7 +9,7 @@ module Sermepa
         DS_MERCHANT_ORDER:                  params[:order]                    || Time.now.to_i,
         DS_MERCHANT_MERCHANTCODE:           params[:merchant_code]            || Sermepa.config.merchant_code,
         DS_MERCHANT_TERMINAL:               params[:terminal]                 || Sermepa.config.terminal,
-        DS_MERCHANT_TRANSACTIONTYPE:        TRANSACTION_TYPES[params[:transaction_type]],
+        DS_MERCHANT_TRANSACTIONTYPE:        FORM_TRANSACTION_TYPES[params[:transaction_type]],
         DS_MERCHANT_MERCHANTURL:            params[:merchant_url]             || Sermepa.config.merchant_url,
         DS_MERCHANT_URLOK:                  params[:url_ok]                   || Sermepa.config.url_ok,
         DS_MERCHANT_URLKO:                  params[:url_ko]                   || Sermepa.config.url_ko,

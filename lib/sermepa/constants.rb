@@ -7,6 +7,23 @@ module Sermepa
     :JPY => '392'
   }
 
+  FORM_TRANSACTION_TYPES = {
+    # Payment Requests
+    :traditional_payment =>     '0',
+    :preauthorization =>        '1',
+    :deferred_authorization_confirmation => '2',
+    :total_or_partial_devolution => '3',
+    :authentication => '7',
+    :authentication_confirmation => '8',
+    :preauthorization_cancel => '9',
+    :start_file_card => 'L',
+    :next_file_card => 'M',
+    :deferred_preauthorization => 'O',
+    :deferred_preauthorization_confirmation => 'P',
+    :deferred_preauthorization_cancel => 'Q'
+  }
+
+
   TRANSACTION_TYPES = {
     # Payment Requests
     :traditional_payment =>     'A',
