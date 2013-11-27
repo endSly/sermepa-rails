@@ -23,7 +23,7 @@ module Sermepa
       values = sermepa_form_fields(amount, params)
       output = ActiveSupport::SafeBuffer.new
 
-      output << form_tag(Sermepa.config.post_url) do
+      output << form_tag(Sermepa.config.post_url, :method => :post) do
         innerOutput = ActiveSupport::SafeBuffer.new
         values.each_pair do |k,v|
           innerOutput << hidden_field_tag(k, v) if v
